@@ -1,0 +1,121 @@
+body {
+  background-color: white;
+  font-family: "Manrope";
+  font-weight: 400;
+  color: black;
+  font-size: 18px;
+}
+
+textarea {
+  padding: 0;
+}
+
+input {
+  padding: 0;
+}
+
+h1 {
+  margin-bottom: 70px;
+  text-align: center;
+  font-size: 45px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+.posts__wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new__post {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.post-title-input {
+  height: 30px;
+  font-family: inherit;
+}
+
+.symbol-title-hidden {
+  color: red;
+}
+
+.post-text-input {
+  height: 100px;
+  font-family: inherit;
+}
+
+.symbol-text-hidden {
+  color: red;
+}
+
+.new-post-btn {
+  height: 50px;
+  font-family: inherit;
+  background-color: #0094ff;
+  color: white;
+  border: none;
+}
+
+:disabled {
+  opacity: 0.5;
+}
+
+.posts__publication {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.date__text {
+  margin-bottom: 20px;
+  color: #0094ff;
+}
+
+.post__title {
+  margin-bottom: 20px;
+  word-break: break-all;
+  font-weight: 700;
+}
+
+.post__text {
+  margin-bottom: 50px;
+  word-break: break-all;
+}
+
+@media (max-width: 767px) {
+  h1 {
+    margin-bottom: 50px;
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  .container {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .new__post {
+    width: calc(50% - 20px);
+  }
+
+  .posts__publication {
+    width: calc(50% - 20px);
+  }
+}

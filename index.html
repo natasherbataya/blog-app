@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog App</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Блог</h1>
+      <div class="posts__wrapper">
+        <div class="new__post">
+          <h2>Новый пост</h2>
+          <input
+            class="js-post-title-input post-title-input"
+            placeholder="Введите заголовк"
+            type="text"
+          />
+          <output class="js-output-symbol-title"></output>
+
+          <textarea
+            class="js-post-text-input post-text-input"
+            placeholder="Введите текст"
+            type="text"
+          ></textarea>
+          <output class="js-output-symbol-text"></output>
+
+          <button class="js-new-post-btn new-post-btn">Опубликовать</button>
+        </div>
+
+        <div class="posts__publication">
+          <h2>Лента</h2>
+          <div class="js-posts">Лента пуста...</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
