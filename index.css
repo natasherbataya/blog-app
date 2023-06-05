@@ -1,121 +1,53 @@
 body {
-  background-color: white;
   font-family: "Manrope";
-  font-weight: 400;
-  color: black;
-  font-size: 18px;
-}
-
-textarea {
-  padding: 0;
-}
-
-input {
-  padding: 0;
-}
-
-h1 {
-  margin-bottom: 70px;
-  text-align: center;
-  font-size: 45px;
   font-weight: 700;
 }
 
-h2 {
-  font-size: 30px;
-  font-weight: 700;
-}
-
-.container {
-  margin: 0 auto;
-  width: 1200px;
-}
-
-.posts__wrapper {
-  display: flex;
-  justify-content: space-between;
-}
-
-.new__post {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-
-.post-title-input {
-  height: 30px;
+button {
+  display: block;
+  padding: 0;
+  cursor: pointer;
   font-family: inherit;
-}
-
-.symbol-title-hidden {
-  color: red;
-}
-
-.post-text-input {
-  height: 100px;
-  font-family: inherit;
-}
-
-.symbol-text-hidden {
-  color: red;
-}
-
-.new-post-btn {
-  height: 50px;
-  font-family: inherit;
-  background-color: #0094ff;
-  color: white;
   border: none;
 }
 
-:disabled {
-  opacity: 0.5;
+.counter {
+  text-align: center;
+  font-size: 32px;
+  line-height: 44px;
+  color: #000000;
 }
 
-.posts__publication {
-  width: 500px;
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+.btn-add {
+  margin: 0 auto 36px;
+  padding: 0 164px;
+  line-height: 100px;
+  text-align: center;
+  background: #4191ff;
+  border-radius: 20px;
+  font-size: 32px;
+  color: #ffffff;
 }
 
-.date__text {
-  margin-bottom: 20px;
-  color: #0094ff;
+.btn-reset {
+  margin: 0 auto;
+  padding: 0 172px;
+  line-height: 100px;
+  text-align: center;
+  background: #d45366;
+  border-radius: 20px;
+  font-size: 32px;
+  color: #ffffff;
 }
 
-.post__title {
-  margin-bottom: 20px;
-  word-break: break-all;
-  font-weight: 700;
-}
-
-.post__text {
-  margin-bottom: 50px;
-  word-break: break-all;
-}
-
-@media (max-width: 767px) {
-  h1 {
-    margin-bottom: 50px;
-    font-size: 30px;
-  }
-
-  h2 {
-    font-size: 25px;
-  }
-
-  .container {
+@media (max-width: 500px) {
+  .btn-add {
+    padding: 0;
     width: 100%;
-    padding: 20px;
   }
 
-  .new__post {
-    width: calc(50% - 20px);
-  }
-
-  .posts__publication {
-    width: calc(50% - 20px);
+  .btn-reset {
+    padding: 0;
+    width: 100%;
   }
 }
