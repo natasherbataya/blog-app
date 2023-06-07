@@ -20,13 +20,13 @@ const outputSymbolTextNode = document.querySelector('.js-output-symbol-text');
 newPostBtnNode.addEventListener('click', function () {
   const postFromUser = getPostFromUser();
 
-  if (!postTitleInputNode.value) {
-    return;
-  };
+  // if (!postTitleInputNode.value) {
+  //   return;
+  // };
 
-  if (!postTextInputNode.value) {
-    return;
-  };
+  // if (!postTextInputNode.value) {
+  //   return;
+  // };
 
   addPost(postFromUser);
 
@@ -110,6 +110,15 @@ function publicationDate() {
 
 
 function getPostFromUser() {
+
+  if (!postTitleInputNode.value) {
+    return;
+  };
+
+  if (!postTextInputNode.value) {
+    return;
+  };
+
   const title = postTitleInputNode.value;
   const text = postTextInputNode.value;
   const date = publicationDate();
@@ -121,7 +130,6 @@ function getPostFromUser() {
   };
 
 };
-
 
 function addPost({ title, text, date }) {
   posts.push({
