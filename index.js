@@ -1,5 +1,6 @@
 const posts = [];
 
+const disabled = ":disabled";
 const SYMBOL_TITLE_CLASSNAME = "symbol-title-hidden";
 const SYMBOL_TEXT_CLASSNAME = "symbol-text-hidden";
 const SYMBOL_TITLE_MESSAGE = 'Вы ввели более 100 символов';
@@ -20,6 +21,13 @@ const outputSymbolTextNode = document.querySelector('.js-output-symbol-text');
 newPostBtnNode.addEventListener('click', function () {
   const postFromUser = getPostFromUser();
 
+  if (!postTitleInputNode.value) {
+    return;
+  };
+  if (!postTextInputNode.value) {
+    return;
+  };
+
   addPost(postFromUser);
 
   renderPosts();
@@ -27,6 +35,7 @@ newPostBtnNode.addEventListener('click', function () {
   clearInput();
 
 });
+
 
 
 postTitleInputNode.addEventListener('input', function () {
@@ -100,17 +109,7 @@ function publicationDate() {
 
 };
 
-
 function getPostFromUser() {
-
-  if (!postTitleInputNode.value) {
-    return;
-  };
-
-  if (!postTextInputNode.value) {
-    return;
-  };
-
   const title = postTitleInputNode.value;
   const text = postTextInputNode.value;
   const date = publicationDate();
@@ -120,7 +119,6 @@ function getPostFromUser() {
     text: text,
     date: date
   };
-
 };
 
 function addPost({ title, text, date }) {
