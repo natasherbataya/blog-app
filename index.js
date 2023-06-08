@@ -1,8 +1,9 @@
 const posts = [];
 
-const disabled = ":disabled";
-const SYMBOL_TITLE_CLASSNAME = "symbol-title-hidden";
-const SYMBOL_TEXT_CLASSNAME = "symbol-text-hidden";
+const SYMBOL_TITLE_CLASSNAME = "symbol-title-red";
+const SYMBOL_TEXT_CLASSNAME = "symbol-text-red";
+const TITLE_EMPTY_MESSAGE = 'Введите заголовок';
+const TEXT_EMPTY_MESSAGE = 'Введите текст';
 const SYMBOL_TITLE_MESSAGE = 'Вы ввели более 100 символов';
 const SYMBOL_TEXT_MESSAGE = 'Вы ввели более 200 символов';
 const MAX_SYMBOL_TITLE = 100;
@@ -22,10 +23,11 @@ newPostBtnNode.addEventListener('click', function () {
   const postFromUser = getPostFromUser();
 
   if (!postTitleInputNode.value) {
-    return;
+    return outputSymbolTitleNode.innerText = TITLE_EMPTY_MESSAGE;
   };
+
   if (!postTextInputNode.value) {
-    return;
+    return outputSymbolTextNode.innerText = TEXT_EMPTY_MESSAGE;
   };
 
   addPost(postFromUser);
@@ -35,8 +37,6 @@ newPostBtnNode.addEventListener('click', function () {
   clearInput();
 
 });
-
-
 
 postTitleInputNode.addEventListener('input', function () {
   validationGetTitleFromUser();
@@ -59,9 +59,15 @@ function validationDisabledButton() {
 
 function validationGetTitleFromUser() {
 
-  outputSymbolTitleNode.innerText = `Можно ввести ${MAX_SYMBOL_TITLE - postTitleInputNode.value.length} из ${MAX_SYMBOL_TITLE} символов`;
+  const titleLength = postTitleInputNode.value.length;
+  outputSymbolTitleNode.innerText = `${MAX_SYMBOL_TITLE - titleLength} / ${MAX_SYMBOL_TITLE}`;
 
-  if (postTitleInputNode.value.length > MAX_SYMBOL_TITLE) {
+  if (titleLength === 0) {
+    outputSymbolTitleNode.innerText = ``;
+
+  };
+
+  if (titleLength > MAX_SYMBOL_TITLE) {
 
     outputSymbolTitleNode.innerHTML = SYMBOL_TITLE_MESSAGE;
     outputSymbolTitleNode.classList.add(SYMBOL_TITLE_CLASSNAME);
@@ -71,11 +77,17 @@ function validationGetTitleFromUser() {
   };
 };
 
+
 function validationGetTextFromUser() {
 
-  outputSymbolTextNode.innerHTML = `Можно ввести ${MAX_SYMBOL_TEXT - postTextInputNode.value.length} из ${MAX_SYMBOL_TEXT} символов`;
+  const textLength = postTextInputNode.value.length;
+  outputSymbolTextNode.innerHTML = `${MAX_SYMBOL_TEXT - textLength} / ${MAX_SYMBOL_TEXT}`;
 
-  if (postTextInputNode.value.length > MAX_SYMBOL_TEXT) {
+  if (textLength === 0) {
+    outputSymbolTextNode.innerText = ``;
+  }
+
+  if (textLength > MAX_SYMBOL_TEXT) {
 
     outputSymbolTextNode.innerHTML = SYMBOL_TEXT_MESSAGE;
     outputSymbolTextNode.classList.add(SYMBOL_TEXT_CLASSNAME);
@@ -93,8 +105,6 @@ function addZero(value) {
 
   return value;
 };
-
-
 
 function publicationDate() {
   const currentDate = new Date();
@@ -155,7 +165,6 @@ function renderPosts() {
 
   postsNode.innerHTML = postsHTML;
 };
-
 
 function clearInput() {
   postTitleInputNode.value = '';
