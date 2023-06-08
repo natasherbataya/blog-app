@@ -23,10 +23,12 @@ newPostBtnNode.addEventListener('click', function () {
   const postFromUser = getPostFromUser();
 
   if (!postTitleInputNode.value) {
+    outputSymbolTitleNode.classList.add(SYMBOL_TITLE_CLASSNAME);
     return outputSymbolTitleNode.innerText = TITLE_EMPTY_MESSAGE;
   };
 
   if (!postTextInputNode.value) {
+    outputSymbolTextNode.classList.add(SYMBOL_TEXT_CLASSNAME);
     return outputSymbolTextNode.innerText = TEXT_EMPTY_MESSAGE;
   };
 
