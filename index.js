@@ -22,12 +22,12 @@ const outputSymbolTextNode = document.querySelector('.js-output-symbol-text');
 newPostBtnNode.addEventListener('click', function () {
   const postFromUser = getPostFromUser();
 
-  if (!postTitleInputNode.value) {
+  if (postTitleInputNode.value.trim() == 0) {
     outputSymbolTitleNode.classList.add(SYMBOL_TITLE_CLASSNAME);
     return outputSymbolTitleNode.innerText = TITLE_EMPTY_MESSAGE;
   };
 
-  if (!postTextInputNode.value) {
+  if (postTextInputNode.value.trim() == 0) {
     outputSymbolTextNode.classList.add(SYMBOL_TEXT_CLASSNAME);
     return outputSymbolTextNode.innerText = TEXT_EMPTY_MESSAGE;
   };
@@ -39,6 +39,7 @@ newPostBtnNode.addEventListener('click', function () {
   clearInput();
 
 });
+
 
 postTitleInputNode.addEventListener('input', function () {
   validationGetTitleFromUser();
@@ -125,6 +126,8 @@ function getPostFromUser() {
   const title = postTitleInputNode.value;
   const text = postTextInputNode.value;
   const date = publicationDate();
+
+
 
   return {
     title: title,
