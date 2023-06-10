@@ -7,11 +7,13 @@ body {
 }
 
 textarea {
-  padding: 0;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 input {
-  padding: 0;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 h1 {
@@ -101,6 +103,15 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 30px;
+}
+
+.posts__publication-wrapper {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.post {
+  display: flex;
+  flex-direction: column;
 }
 
 .date__text {

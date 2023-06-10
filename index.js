@@ -22,13 +22,21 @@ const outputSymbolTextNode = document.querySelector('.js-output-symbol-text');
 newPostBtnNode.addEventListener('click', function () {
   const postFromUser = getPostFromUser();
 
-  if (postTitleInputNode.value.trim() == 0) {
+  if (!postTitleInputNode.value.trim()) {
+
+    clearSpaceInput(postTitleInputNode);
+
     outputSymbolTitleNode.classList.add(SYMBOL_TITLE_CLASSNAME);
+
     return outputSymbolTitleNode.innerText = TITLE_EMPTY_MESSAGE;
   };
 
-  if (postTextInputNode.value.trim() == 0) {
+  if (!postTextInputNode.value.trim()) {
+
+    clearSpaceInput(postTextInputNode);
+
     outputSymbolTextNode.classList.add(SYMBOL_TEXT_CLASSNAME);
+
     return outputSymbolTextNode.innerText = TEXT_EMPTY_MESSAGE;
   };
 
@@ -177,6 +185,11 @@ function clearInput() {
   outputSymbolTitleNode.value = '';
   outputSymbolTextNode.value = '';
 };
+
+function clearSpaceInput(element) {
+  element.value = '';
+};
+
 
 
 
